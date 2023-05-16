@@ -1,0 +1,36 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+
+
+
+
+
+<body>
+<form id="form1" name="form1" method="post" action="add_notifications">
+  <table class="table table-dark table-striped" width="200" border="1">
+    <tr>
+      <th scope="row">notification</th>
+
+      <td>date</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+
+    <tr>
+      <th height="27" scope="row">&nbsp;{{i['notification']}}</th>
+      <td>&nbsp;{{i['date']}}</td>
+      <td><p><a href="editnotification?id={{ i ['id'] }}#about">edit</a></p>
+          <p><a href="delete_notification?id={{ i ['id'] }}">delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th height="27" colspan="3" scope="row"><label>
+        <input type="submit" name="Submit" value="Add" />
+      </label></th>
+    </tr>
+  </table>
+  <label></label>
+</form>
+</body>
+{% endblock %}

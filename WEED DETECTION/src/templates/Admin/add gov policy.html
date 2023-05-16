@@ -1,0 +1,34 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="add_gov_policy1">
+  <table class="table table-dark table-striped" width="200" border="1">
+    <tr>
+      <th width="126"  scope="row">policy</th>
+      <td width="89"> <label>
+        <input type="text" name="textfield" required />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">details</th>
+      <td><label>
+        <input type="text" name="textfield2" required />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">date</th>
+      <td><label>
+        <input type="text" name="textfield3" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="ADD" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-dark table-striped" width="511" border="1">
+    <tr>
+      <th width="27" height="37" scope="row">Name</th>
+      <td width="25">Place</td>
+      <td width="26">Post</td>
+      <td width="26">Pin</td>
+      <td width="26">Phone</td>
+      <td width="30">Email</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th height="59" scope="row">{{i['fname']}}{{i['lname']}}</th>
+      <td>{{i['place']}}</td>
+      <td>{{i['post']}}</td>
+      <td>&nbsp;{{i['pin']}}</td>
+      <td>&nbsp;{{i['phone']}}</td>
+      <td>&nbsp;{{i['email']}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

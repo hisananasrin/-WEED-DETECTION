@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'eindex.html' %}
+{% block body %}
+<body>
+
+<form id="form1" name="form1" method="post" action="add_farming_method">
+  <table class="table table-dark table-striped" width="230" border="1">
+    <tr>
+      <th  >farming method </th>
+      <td >details</td>
+      <td >Date</td>
+      <td></td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th >{{i['fmethod']}}</th>
+      <td>{{i['details']}}</td>
+      <td>{{i['date']}}</td>
+      <td><p><a href="editfarmingmethod?id={{i['fid']}}#about">edit</a></p>
+        <p><a href="delete_farming_method?id={{i['fid']}}">delete</a></p></td>
+      </td>
+      {% endfor %}
+    </tr>
+    <tr>
+      <th  colspan="4dp"><label>
+        <input type="submit" name="Submit" value="Add" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}
+
+<!--</html>-->

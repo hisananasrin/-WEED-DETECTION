@@ -1,0 +1,33 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+
+
+<body>
+<form id="form1" name="form1" method="post" action="add_crops">
+  <table class="table table-dark table-striped" width="242" border="1">
+    <tr>
+      <th width="69" scope="row">Crop name </th>
+      <td width="41">Details</td>
+      <td width="26">date</td>
+      <td width="78">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['crops']}}</th>
+      <td>&nbsp;{{i['details']}}</td>
+      <td>&nbsp;{{i['date']}}</td>
+      <td><p><a href="editcrops?id={{i['cid']}}#about">edit</a></p>
+          <p><a href="delete_crop?id={{ i ['cid' ] }}">delete</a></p></td>
+    </tr>
+     {% endfor %}
+    <tr>
+      <th colspan="4" scope="row"><label>
+        <input type="submit" name="Submit" value="Add" />
+      </label></th>
+    </tr>
+  </table>
+
+</form>
+</body>
+{% endblock %}
